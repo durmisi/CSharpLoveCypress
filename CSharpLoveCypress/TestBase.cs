@@ -26,8 +26,9 @@ namespace CSharpLoveCypress
 
             var reactAppPath = Path.GetFullPath(Path.Combine(testAssemblyPath, @"..\..\..\..\client"));
 
-            var commandText = $"npx cypress run --spec \"{cypressSpecFilePath}\" & exit";
-
+            //var commandText = $"npx cypress run --spec \"{cypressSpecFilePath}\" & exit";
+            var commandText = $"{reactAppPath}/node_modules/.bin/cypress run --spec \"{cypressSpecFilePath}\" & exit";
+            
             var cmd = GetCmd(reactAppPath);
 
             var cypressProcessOutput = ExecuteCommand(cmd, commandText);
@@ -62,7 +63,7 @@ namespace CSharpLoveCypress
         {
             outputHelper.WriteLine("Executing command: " + commandText);
 
-            cmd.StartInfo.Arguments = "/C " + commandText;
+            cmd.StartInfo.Arguments = "/C" + commandText;
             cmd.Start();
 
             var cypressProcessOutput = cmd.StandardOutput.ReadToEnd();
