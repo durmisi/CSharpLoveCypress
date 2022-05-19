@@ -14,7 +14,7 @@ namespace CSharpLoveCypress
         public void SubmitTests()
         {
             // some data initialization code here....
-            RunCypressTest("cypress/integration/form/submit_spec.ts");
+            RunCypressTest("cypress/integration/form/submit.spec.ts");
         }
     }
 }

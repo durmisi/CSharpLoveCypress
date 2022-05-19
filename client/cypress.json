@@ -1,3 +1,8 @@
 {
-  "baseUrl": "http://localhost:3001"
+  "testFiles": "**/*.spec.ts",
+  "baseUrl": "http://localhost:3001",
+  "video": false,
+  "videoRecording": false,
+  "videoCompression": false,
+  "chromeWebSecurity": false
 }
